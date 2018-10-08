@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Day1</title>
 </head>
 <body>
 
@@ -27,20 +27,33 @@
     }
     $myarray = array ("string in da array", "notha string in da array", "integer in da array?");
     
-    $cbc4 = new stdClass;
-    $cbc4->student = 'Nestor Peralta';
-    $cbc4->age = 28;
-    $cbc4->sex = "Male";
+    class cbc4 {
+        var $student = array ("Nestor Peralta Jr", "Colby", "William", "CharleRae", "Elle");
+        var $age = array (28, 31, 22, 35, 21);
+        var $sex = array ("Male", "Male", "Male", "Female", "Female");
+    }
 
+    $students = array ("Nestor Peralta Jr", "Colby", "William", "CharleRae", "Elle");
+    $skew = new cbc4;
     echo localExample();
     echo globalExample();
     print_r($myarray, false);
-    echo strrev(
-
-        
-    )
+    print_r($skew);
+    $arrayToString = implode(", ",$students);
+    echo ($arrayToString);
+    $reversed = array_reverse($students);
+    echo strlen($arrayToString);
+    print_r ($reversed);
+   
     ?>
 
+    <?php $arrayToString = implode(", ",$students);
+    echo ($arrayToString);
+    $reversed = array_reverse($students);
+    echo strlen($arrayToString);
+    print_r ($reversed);
+   
+    ?>
     
     
 </body>
