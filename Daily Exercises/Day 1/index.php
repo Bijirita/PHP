@@ -52,7 +52,7 @@
     echo "<br>"; echo "<br>";
 
     //----Created arrays to play with------------------------------------/
-    $myarray = array ("string in da array", "notha string in da array", "integer in da array?");
+    $myarray = array ("string in da array", "notha string in da array", "integer in da array?", 2);
     $students = array ("Nestor Peralta Jr", "Colby", "William", "CharleRae", "Elle");
     
     //----var_dump of $myarray-----------//
@@ -93,7 +93,6 @@
     echo "<br>";
     print_r($instantiate); //--Printed the object to the document//
     ?>
-    
-    
+
 </body>
 </html> 
