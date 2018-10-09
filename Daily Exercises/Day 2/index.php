@@ -9,6 +9,7 @@
         <title>PHPDay2Excersises</title>
     </head>
     <body>
+        <!--contact card-->
         <fieldset class="contactcard">
             <h1>Hello</h1>
             <legend>Contact Us</legend>
@@ -48,7 +49,31 @@
             </label>
             <input type="submit" name="submit" value="Send">
         </fieldset>
+        <br><br>
+        <!--php exercises-->
+        <div class="exercises">
+            <?php
+            /*--Constants-------------*/
+            echo nl2br ("Created a constant called 'Exercises' with a value of 'Day 2 PHP Exercises' using the defin f(x)");
+            echo "<br>";
+            define ("Exercises", "Day 2 PHP Exercises"); //(name of constant, value);
+            echo (Exercises); //print constant to document.
+            echo "<br>"; echo "<br>";
 
+            /*--Operators--*/
+            echo nl2br ("For my next trick...I'll do things with operators. \n I have +,-,*,/,%,<,>,=, and **");
+          
+
+
+
+
+
+
+
+
+         
+            ?>
+        </div> 
 
 
 
