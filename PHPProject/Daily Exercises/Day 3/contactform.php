@@ -202,10 +202,11 @@
             echo "<br>"; echo "<br>";
 
             //----------------multidimensional arrays--------------//
-            echo ("playing with mulidimensional arrays");
+            echo ("<b>playing with mulidimensional arrays</b>");
             echo "<br>"; echo "<br>";
 
-            echo ("var_dump of array");               
+            echo ("<b> var_dump of array</b>");      
+            echo "<br>";         
             $cars = array (
                 array ("Toyota", "Camry", 222000 . " miles"),
                 array ("Honda", "Civic", 1000 . " miles"),
@@ -215,14 +216,22 @@
             print_r ($cars);
             echo "<br>"; echo "<br>";
 
-            for ($row = 0; $row < 4; $row++) {
-                echo "<p>Row number $row</p>";
+            for ($row = 0; $row < 3; $row++) {
+                echo "<p>Array[$row]</p>";
                 echo "<ul>";
                 for ($col = 0; $col < 3; $col++) {
-                    echo "<li>".$cars[$row][$col]."</li>";
+                    echo "<li>"."Array[[$row][$col]] ".$cars[$row][$col]."</li>";
                 }
                 echo "</ul>";
             }
+            echo "<br>"; echo "<br>";
+            //---------------------Date------------------//
+            $dateCurrent = date("j F Y");
+
+            echo ("Today's date is " . $dateCurrent);
+
+
+
         ?>
     </body>
 </html>
