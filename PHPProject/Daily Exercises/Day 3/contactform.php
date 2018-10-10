@@ -1,9 +1,11 @@
 <?php
         //--defining my variables--// 
 
-            $nameFirst = $nameLast = $email = "";
-            $nameFirstERR = $nameLastERR = $emailERR = "";
-            $emailRegex = '/[a-z0-9!#$%&\'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&\'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?/g';
+            $nameFirst = $nameLast = $email = $phone = $website = "";
+            $nameFirstERR = $nameLastERR = $emailERR = $phoneERR = $websiteERR = "";
+            $urlRegex = "/\b(?:(?:https?|ftp):\/\/|www\.)[-a-z0-9+&@#\/%?=~_|!:,.;]*[-a-z0-9+&@#\/%=~_|]/i";
+            
+
             
 
         //-------------------------------validations------------------------------------------//
@@ -38,19 +40,30 @@
                 } else {
                     //-----checking for RFC2822 Validation-----//
                     $email = test_input($_POST["Email"]);
-                    if (!preg_match('$emailRegex', $email)) {
+                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
                         $emailERR = "Invalid email";
                     }
                 }
                 //-------------Phone validation----------------------//
-                    //------Checking for 
-                if (empty($_POST["Email"])) {
-                    $email = "Email address is required";
+                    //------Checking for no entry------------//
+                if (empty($_POST["Phone"])) {
+                    $phone = "Phone number is required";
                 } else {
-                    //-----checking for regexer email-----//
-                    $email = test_input($_POST["Email"]);
-                    if (!preg_match('/^[a-zA-Z ]*$/', $email)) {
-                        $emailERR = "Invalid email";
+                    //-----checking for regexer phone-----//
+                    $phone = test_input($_POST["Phone"]);
+                    if (!preg_match('/^(\+[0-9]{1,3}|0)[0-9]{3}( ){0,1}[0-9]{7,8}\b/m', $phone)) {
+                        $phoneERR = "Invalid phone number";
+                    }
+                }
+                //------------url validation--------------------//
+                    //--------checking for no entry---------//
+                if (empty($_POST["website"])) {
+                    $website = "website is required";
+                } else {
+                    //-----checking for regexer website-----//
+                    $website = test_input($_POST["website"]);
+                    if (!preg_match($urlRegex, $website)) {
+                        $websiteERR = "Invalid website";
                     }
                 }
             }
@@ -116,7 +129,7 @@
                     <span class="error"> 
                         <?php
                              if(isset($_POST["Email"])) {
-                            echo $email;
+                            echo $emailERR;
                             }
                         ?>
                     </span>
@@ -125,6 +138,13 @@
                 <label> 
                     Phone Number
                     <input type="tel" name="Phone", placeholder="xxxxxxxxxx" required>
+                    <span class="error"> 
+                        <?php
+                             if(isset($_POST["Phone"])) {
+                            echo $phoneERR;
+                            }
+                        ?>
+                    </span>
                 </label>
                 <br><br>
                 <label>
@@ -147,6 +167,19 @@
                     Questions/Comments
                     <textarea name="question">Add your questions and/or comments here</textarea>
                 </label>
+                <br><br>
+                <label> 
+                    Enter a random url
+                    <input type="text" name="website", placeholder="https://www.url.domain" required>
+                    <span class="error"> 
+                        <?php
+                             if(isset($_POST["website"])) {
+                            echo $websiteERR;
+                            }
+                        ?>
+                    </span>
+                </label>
+                <br><br>
                 <input type="submit" name="submit" value="Send">
             </form>
         </fieldset>
@@ -160,6 +193,12 @@
             echo "<br>";
             echo ("email = ");
             echo test_input ($email);
+            echo "<br>";
+            echo ("phone = ");
+            echo test_input ($phone);
+            echo "<br>";
+            echo ("website = ");
+            echo test_input ($website);
         ?>
     </body>
 </html>
