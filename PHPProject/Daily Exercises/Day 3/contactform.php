@@ -199,6 +199,30 @@
             echo "<br>";
             echo ("website = ");
             echo test_input ($website);
+            echo "<br>"; echo "<br>";
+
+            //----------------multidimensional arrays--------------//
+            echo ("playing with mulidimensional arrays");
+            echo "<br>"; echo "<br>";
+
+            echo ("var_dump of array");               
+            $cars = array (
+                array ("Toyota", "Camry", 222000 . " miles"),
+                array ("Honda", "Civic", 1000 . " miles"),
+                array ("Toyota", "Camry", 10 . " miles")
+            );
+            
+            print_r ($cars);
+            echo "<br>"; echo "<br>";
+
+            for ($row = 0; $row < 4; $row++) {
+                echo "<p>Row number $row</p>";
+                echo "<ul>";
+                for ($col = 0; $col < 3; $col++) {
+                    echo "<li>".$cars[$row][$col]."</li>";
+                }
+                echo "</ul>";
+            }
         ?>
     </body>
 </html>
