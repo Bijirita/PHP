@@ -11,53 +11,99 @@
         <link rel="stylesheet" href="Assets/Stylesheets/main.css">
     </head>
     <body>
-        <?php include("header.php"); ?>
-    <div class="forbackground">
-        <div class="card-container">
-            <div class="card">
-                <h4 class="card-header text-center py-4">
-                    <strong>Contact us</strong>
-                </h4>
-                <div class="card-body pt-0">
-                    <form class="text-center" style="color: #000;" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
-                        <div class="md-form mt-3">
-                            <label for="materialContactFormName">Name</label>
-                            <input type="text" id="materialContactFormName" class="form-control">
-                        </div>
+        <!-------------HEADER---------------->    
+        <?php include("header.php");?>
 
-                        <br>
+        <!--FORM VARIABLES------>
 
-                        <div class="md-form">
-                        <label for="materialContactFormEmail">E-mail</label>
-                            <input type="email" id="materialContactFormEmail" class="form-control">
-                        </div>
+        <?php $name = $nameERR = $email = $emailERR = "";?>
+        <!--------------------FORM VALIDATION---------------------------------------->
+        
+        <?php 
+            if (isset($_POST["submit"])) {
+                validation ();
+            }
+               //----------Name Validation-----------//
+            function validation () {
+                //-------check for no entry-------//
+                global $nameERR;
+                if (empty($_POST["formName"])) {
+                    $nameERR = "Name is required";
+                } 
+                // else {
+                //     //--checking for anything that is not letters or spaces.--//
+                //     $name = test_input($_POST["formName"]);
+                //     if (!preg_match('/^[a-zA-Z ]*$/', $name)) {
+                //         $nameERR = "Letters and spaces only. ";
+                //     }
+                // }
+              
+                //-------------Email Validation-----------------//
+                    //------Check for no entry--------------//
+                if (empty($_POST["formEmail"])) {
+                    global $emailERR;
+                    $emailERR = "Email address is required";
+                } 
+                // else {
+                //     //-----checking for RFC2822 Validation-----//
+                //     $email = test_input($_POST["formEmail"]);
+                //     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                //         $emailERR = "Invalid email";
+                //     }
+                // }
+            }
+        ?>
+        <div class="forbackground">
+            <div class="card-container">
+                <div class="card">
+                    <h4 class="card-header text-center py-4">
+                        <strong>Contact us</strong>
+                    </h4>
 
-                        <br>
+                    <br>
 
-                        <span>Subject</span>
-                        <select class="mdb-select">
-                            <option value="" disabled>Choose option</option>
-                            <option value="1" seltected>Question</option>
-                            <option value="2">Feedback</option>
-                            <option value="3">Request</option>
-                        </select>
+                    <div class="card-body pt-0">
+                        <form class="text-center" style="color: #000;" method= "post" action ="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">
+                            <div class="md-form">
+                                <label for="formName">Name</label>
+                                <input type="text" name="formName" class="form-control" required>
+                                <span class="error" style="color: #FF0000;"><?php echo $nameERR;?></span>
+                            </div>
 
-                        <br><br>
+                            <br>
 
-                        <div class="md-form">
-                            <textarea type="text" id="materialContactFormMessage" class="form-control md-textarea" rows="3"></textarea>
-                            <label for="materialContactFormMessage">Message</label>
-                        </div>
-                        <div class="form-check">
-                            <input type="checkbox" class="form-check-input" id="materialContactFormCopy">
-                            <label class="form-check-label" for="materialContactFormCopy">Send me a copy of this message</label>
-                        </div>
-                        <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect" type="submit">Send</button>
-                    </form>
+                            <div class="md-form">
+                                <label for="formEmail">E-mail</label>
+                                <input type="email" id="formEmail" class="form-control" required>
+                                <span class="error" style="color: #FF0000;"><?php echo $emailERR;?></span>
+                            </div>
+
+                            <br><br>
+
+                            <span>Subject</span>
+                            <select class="mdb-select">
+                                <option value="" disabled>Choose option</option>
+                                <option value="1" seltected>Question</option>
+                                <option value="2">Feedback</option>
+                                <option value="3">Request</option>
+                            </select>
+
+                            <br><br>
+
+                            <div class="md-form">
+                                <textarea type="text" id="formMessage" class="form-control md-textarea" rows="3"></textarea>
+                                <label for="formMessage">Message</label>
+                            </div>
+                            <div class="form-check">
+                                <input type="checkbox" class="form-check-input" id="formCopy">
+                                <label class="form-check-label" for="formCopy">Send me a copy of this message</label>
+                            </div>
+                            <button class="btn btn-outline-info btn-rounded btn-block my-4 waves-effect" name="submit" type="submit">Send</button>
+                        </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
         <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
