@@ -86,7 +86,7 @@
 
                             <div class="md-form">
                                 <label for="formEmail">E-mail</label>
-                                <input type="email" name="formEmail" class="form-control">
+                                <input type="email" name="formEmail" class="form-control" required>
                                 <span class="error" style="color: #FF0000;"><?php echo $emailERR;?></span>
                             </div>
 
