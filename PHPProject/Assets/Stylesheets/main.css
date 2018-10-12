@@ -1,0 +1,85 @@
+.jumbotron {
+    background: url("Images/Mount_Fuji.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 300px;
+}
+
+.forbackground {
+    background: url("Images/Cherry_Blossoms.jpg");
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+    height: 100%;
+}
+
+.card-container {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 100%;
+   
+    
+}
+
+.card {
+    width: 500px;
+    display: flex;
+    margin-top: 3em;
+    margin-bottom: 4em;
+}
+
+.card-body {
+    display: flex;
+    align-content: center;
+    justify-content: center;
+}
+
+.flex-container {
+    padding: 3em;
+}
+
+.flex-grid-dubs {
+    display: flex;
+    height: 600px;
+   
+}
+
+.flex-grid-dubs .col {
+    display: flex;
+    background-size: cover;
+}
+
+ .one {
+    background: url("Images/Shinto_Shrine.jpg");
+    margin-right: 5px;
+    margin-bottom: 5px;
+    
+ }
+
+ .two {
+    background: url("Images/Tokyo_Night.jpg");
+    margin-bottom: 5px;
+ }
+
+ .three {
+    background: url("Images/Onsen.jpg");
+    margin-right: 5px;
+   
+ }
+
+ .four {
+    background: url("Images/Kyoto_JP.jpg");
+ }
+
+ /* @media (max-width: 960px) {
+    .flex-grid-dubs{
+      display: block;
+      width: 100%;
+      
+    }
+      .col {
+        width: 1em;
+        margin: 0 0 10px 0;
+      }
+    } */
+ 
