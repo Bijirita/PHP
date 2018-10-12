@@ -8,13 +8,14 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link rel="stylesheet" href="main.css">
     </head>
     <body>
-        <section class="jumbotron text-center"> 
+        <section class="jumbotron text-center m-0 p-0"> 
             <h1>Japan<h1>
         </section>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand" <img src ="../Assets/Images/"></a>
+            <a class="navbar-brand  m-1"><img src="Images/Travel_Logo.jpg" height="50" width="90"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -32,6 +33,15 @@
                 </ul>
             </div>  
         </nav>
+        <div>
+<div class="row">
+  <div class="col-md-6 p-1 one"></div>
+  <div class="col-md-6 p-1 two"></div>
+</div>
+<div class="row">
+   <div class="col-md-6 p-1 three"></div>
+   <div class="col-md-6 p-1 four"></div>
+</div>
 
         
         <!-- Optional JavaScript -->
