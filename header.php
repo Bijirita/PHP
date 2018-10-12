@@ -8,7 +8,7 @@
 
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
-        <link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="Assets/Stylesheets/main.css">
     </head>
     <body>
     <body>
@@ -16,7 +16,7 @@
             <h1>Japan<h1>
         </section>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand  m-1"  href="index3.php"><img src="Images/Travel_Logo.jpg" height="50" width="90"></a>
+            <a class="navbar-brand  m-1"  href="index3.php"><img src="Assets/Images/Travel_Logo.jpg" height="50" width="90"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
