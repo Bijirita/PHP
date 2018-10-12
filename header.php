@@ -16,7 +16,7 @@
             <h1>Japan<h1>
         </section>
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-            <a class="navbar-brand  m-1"><img src="Images/Travel_Logo.jpg" height="50" width="90"></a>
+            <a class="navbar-brand  m-1"  href="index3.php"><img src="Images/Travel_Logo.jpg" height="50" width="90"></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span class="navbar-toggler-icon"></span>
             </button>
@@ -29,7 +29,7 @@
                         <a class="nav-link" href="#">Flights</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Contact</a>
+                        <a class="nav-link" href="contact.php">Contact</a>
                     </li>    
                 </ul>
             </div>  
