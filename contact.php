@@ -27,31 +27,43 @@
             function validation () {
                 //-------check for no entry-------//
                 global $nameERR;
+                global $emailERR;
                 if (empty($_POST["formName"])) {
                     $nameERR = "Name is required";
                 } 
-                // else {
-                //     //--checking for anything that is not letters or spaces.--//
-                //     $name = test_input($_POST["formName"]);
-                //     if (!preg_match('/^[a-zA-Z ]*$/', $name)) {
-                //         $nameERR = "Letters and spaces only. ";
-                //     }
-                // }
+                else {
+                    //--checking for anything that is not letters or spaces.--//
+                    $name = test_input($_POST["formName"]);
+                    if (!preg_match('/^[a-zA-Z ]*$/', $name)) {
+                        $nameERR = "Letters and spaces only. ";
+                    }
+                }
               
                 //-------------Email Validation-----------------//
                     //------Check for no entry--------------//
                 if (empty($_POST["formEmail"])) {
-                    global $emailERR;
+                    
                     $emailERR = "Email address is required";
                 } 
-                // else {
-                //     //-----checking for RFC2822 Validation-----//
-                //     $email = test_input($_POST["formEmail"]);
-                //     if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-                //         $emailERR = "Invalid email";
-                //     }
-                // }
+                else {
+                    //-----checking for RFC2822 Validation-----//
+                    $email = test_input($_POST["formEmail"]);
+                    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+                        $emailERR = "Invalid email";
+                        echo $emailERR;
+                    }
+                }
             }
+               //sanitization function//
+               function test_input($input){
+                //--remove whitespace from sides of string--//
+                $input = trim($input);
+                //--remove slashes from string--//
+                $input = stripslashes ($input);
+                //--convers &, ", ', >, and < to inert characters--//
+                $input = htmlspecialchars ($input);
+                return $input;
+        }
         ?>
         <div class="forbackground">
             <div class="card-container">
@@ -74,7 +86,7 @@
 
                             <div class="md-form">
                                 <label for="formEmail">E-mail</label>
-                                <input type="email" id="formEmail" class="form-control" required>
+                                <input type="email" name="formEmail" class="form-control">
                                 <span class="error" style="color: #FF0000;"><?php echo $emailERR;?></span>
                             </div>
 
