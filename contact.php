@@ -63,8 +63,27 @@
                 //--convers &, ", ', >, and < to inert characters--//
                 $input = htmlspecialchars ($input);
                 return $input;
-        }
-        ?>
+            }
+            //=======Potential success message=======//
+            ?>
+            <?php
+                $name = $_POST['name'];
+                $email = $_POST['email'];
+                $message = $_POST['message'];
+                $from = 'From: email.com'; 
+                $to = 'email@gmail.com'; 
+                $subject = 'Email Inquiry';
+                $body = "From: $name\n E-Mail: $email\n Message:\n $message";
+                if ($_POST['submit']) {
+                    if (mail ($to, $subject, $body, $from)) { 
+                    $success = "Message successfully sent";
+                    } else {
+                        $success = "Message Sending Failed, try again";
+                    }
+                }
+            ?>
+        
+
         <div class="forbackground">
             <div class="card-container">
                 <div class="card">
