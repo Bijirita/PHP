@@ -67,12 +67,12 @@
             ?>
             <?php
             //=======Potential success message=======//
-                <div class="alert alert-success" role="alert">
-                <h4 class="alert-heading">Well done!</h4>
-                <p>Your enquiry has been successfully sent. We will contact you at $POST["email"] soon.</p>
-                <hr>
-                //<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
-                </div>
+                // <div class="alert alert-success" role="alert">
+                // <h4 class="alert-heading">Well done!</h4>
+                // <p>Your enquiry has been successfully sent. We will contact you at $POST["email"] soon.</p>
+                // <hr>
+                // //<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+                // </div>
 
                 $name = $_POST['name'];
                 $email = $_POST['email'];
